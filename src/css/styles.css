@@ -128,10 +128,12 @@ img.bg {
 .weather-info .info {
 	color: #2E3335;
 	font-size: 1.3em;
+	text-transform: capitalize;
 }
 
 .weather-info .place {
 	color: #2E3335;
+	text-transform: capitalize;
 }
 
 .date {
