@@ -1,0 +1,156 @@
+body {
+	background: transparent;
+}
+
+img.bg {
+	/* Set rules to fill background */
+	min-height: 100%;
+	min-width: 1024px;
+	
+	/* Set up proportionate scaling */
+	width: 100%;
+	height: auto;
+	
+	/* Set up positioning */
+	position: fixed;
+	top: 0;
+	left: 0;
+}
+
+@media screen and (max-width: 1024px){
+	img.bg {
+		left: 50%;
+		margin-left: -512px; }
+}
+
+.weather-widget {
+  margin: auto;
+  position: absolute;
+  top: 0; left: 0; bottom: 0; right: 0;
+}
+
+.weather-widget.is-Responsive {
+  width: 50%; 
+  height: 50%;
+  min-width: 200px;
+  max-width: 400px;
+}
+
+@media (max-width: 768px){
+	.weather-widget.is-Responsive {
+		width: 85%;
+	}
+}
+
+.weather-widget .panel {
+	border-radius:8px;
+	-webkit-box-shadow:0 6px 10px 0 rgba(0,0,0,.12),0 1px 6px 0 rgba(0,0,0,.12);
+	box-shadow:0 6px 10px 0 rgba(0,0,0,.12),0 1px 6px 0 rgba(0,0,0,.12);
+	border:0px !important;
+	position: relative;
+}
+
+#search-wrap {
+	background: #2E3335;
+	position: absolute;
+	top:-20px;
+	left:0;
+	padding:6px;
+	opacity:0;
+	z-index: 2;
+	-webkit-transition: all;
+	-o-transition: all;
+	transition: all 0ms 216.698ms;
+	-webkit-transition-duration: 200ms;
+	transition-duration: 200ms;
+}
+
+.weather-widget.search-toggled #search-wrap {
+	opacity:1;
+	top:0;
+}
+
+#search-wrap * {
+	border-radius:0px;
+}
+
+#search-wrap .input-group-addon {
+	background: #ffffff;
+	border:0px;
+	font-size: 1.3em;
+	color: #2E3335;
+}
+
+#search-wrap .input-group-addon:hover {
+	background: #E3E3E3;
+	color: #2E3335;
+}
+
+#search-wrap input.form-control, #search-wrap input.form-control:focus {
+	border:0px;
+	-webkit-box-shadow: none;
+	box-shadow: none;
+}
+
+.actions {
+	z-index: 1;
+}
+
+.actions a, .actions a:visited {
+	color: #DBE1E2;
+	border-radius:50%;
+}
+
+.actions a:active, .actions a:hover {
+	color: #2E3335;
+	background: #E3E3E3;
+}
+
+.actions i.zmdi {
+	font-size: 1.5em;
+}
+
+.main-icon i.wi {
+	font-size: 96px;
+	color: #778287;
+	padding:20px 0px;
+}
+
+.temperature {
+	font-size: 2.6em;
+	color: #A2A9AC;
+}
+
+.weather-info {
+	font-style:italic;
+}
+
+.weather-info .info {
+	color: #2E3335;
+	font-size: 1.3em;
+}
+
+.weather-info .place {
+	color: #2E3335;
+}
+
+.date {
+	background: #54BAE6;
+	color: #fff;
+	text-align: center;
+	text-transform: uppercase;
+	padding: 5px;
+	font-size: 1.2em;
+}
+
+.weather-widget .panel-footer {
+	background: #2E3335;
+	color: #E6E6E6;
+	padding: 30px;
+}
+
+.weather-widget .panel-footer .wi {
+	color: #4F5759;
+	padding-right: 4px;
+	font-size: 1.5em;
+}
