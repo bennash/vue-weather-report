@@ -19,7 +19,9 @@ var app = new Vue({
 		humidity: '',
 		rain: '',
 		wind: '',
-		unit: "C",
+		wind_speed: '',
+		temp_unit: "C",
+		speed_unit: "m/s",
 		main_icon: "wi wi-sunny"
 	},
 	computed: {
@@ -33,11 +35,17 @@ var app = new Vue({
 			return now.getDate();
 		},
 		temp: function(){
-			if(this.unit=="C"){
+			if(this.temp_unit=="C"){
 				return (this.kelvin_temp-273.15).toFixed(0);
 			} else {
 				return (this.kelvin_temp*9/5-459.67).toFixed(0);
 			}
+		},
+		wind_speed: function(){
+			if(this.temp_unit=="F"){
+				return (this.wind*0.000621371*3600).toFixed(2);
+			}
+			return this.wind;
 		}
 	},
 	created: function(){
@@ -74,7 +82,16 @@ var app = new Vue({
 		setLocation: function(){
 			this.place = $("input#location").val();
 			$(".weather-widget").toggleClass("search-toggled");
-			$("input#location").val(''); // empty search box
+			$("input#location").val(''); // clear the search box
+		},
+		toggleUnit: function(){
+			if(this.temp_unit=="C"){
+				this.temp_unit = "F";
+				this.speed_unit = "mi/hr"
+			} else {
+				this.temp_unit = "C";
+				this.speed_unit = "m/s"
+			}
 		}
 	}
 });

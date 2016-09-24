@@ -48,9 +48,10 @@
 									</div>
 
 									<div class="row">
-										<div class="col-sm-4 col-sm-offset-8">
+										<div class="col-sm-6 col-sm-offset-6">
 											<div class="pull-right actions">
 												<a title="Set location" class="btn" id="locationsearch" href="javascript:;"><i class="zmdi zmdi-pin"></i></a>
+												<a title="Change unit" v-on:click="toggleUnit" class="btn" href="javascript:;"><i class="zmdi zmdi-swap"></i></a>
 												<a title="Refresh" v-on:click="getWeatherData" class="btn" href="javascript:;"><i class="zmdi zmdi-refresh"></i></a>
 											</div>
 										</div>
@@ -64,7 +65,7 @@
 
 									<div class="row">
 										<div class="col-sm-3 col-xs-5 temperature">
-											{{ temp }}&deg;{{ unit }}
+											{{ temp }}&deg;{{ temp_unit }}
 										</div>
 										<div class="col-sm-7 col-xs-5 weather-info">
 											<div class="info">{{ weather_descrip }}</div>
@@ -83,7 +84,7 @@
 
 										<div title="Wind speed" class="col-sm-4 col-md-4 col-xs-4 text-center">
 											<i class="wi wi-windy"></i>
-											<div>{{ wind }}m/s</div>
+											<div>{{ wind_speed }}{{ speed_unit }}</div>
 										</div>
 
 										<div title="Humidity" class="col-sm-4 col-md-4 col-xs-4 text-center">
